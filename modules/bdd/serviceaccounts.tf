@@ -25,10 +25,3 @@ resource "google_project_iam_member" "tekton_sa_access_policy_admin_binding" {
   member   = "serviceAccount:${var.tekton_sa_email}"
   project = "jenkins-x-labs-bdd"
 }
-
-resource "google_project_iam_member" "tekton_sa_resource_prj_get_binding" {
-  provider = google
-  role     = "roles/resourcemanager.projects.getIamPolicy"
-  member   = "serviceAccount:${var.tekton_sa_email}"
-  project = "jenkins-x-labs-bdd"
-}
