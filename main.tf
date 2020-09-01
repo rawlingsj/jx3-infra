@@ -21,6 +21,11 @@ module "jenkinsxio" {
   tekton_sa_email = module.jx.tekton_sa_email
 }
 
+module "bdd" {
+  source = "./modules/bdd"
+  tekton_sa_email = module.jx.tekton_sa_email
+}
+
 output "connect" {
   description = "Connect to cluster"
   value       = "connect to your cluster using `${module.jx.connect}`"
