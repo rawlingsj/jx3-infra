@@ -25,3 +25,10 @@ resource "google_project_iam_member" "tekton_sa_access_policy_admin_binding" {
   member   = "serviceAccount:${var.tekton_sa_email}"
   project = "jenkins-x-labs-bdd"
 }
+
+resource "google_project_iam_member" "tekton_sa_kube_engine_developer_binding" {
+  provider = google
+  role     = "roles/container.developer"
+  member   = "serviceAccount:${var.tekton_sa_email}"
+  project = "jenkins-x-labs-bdd"
+}
