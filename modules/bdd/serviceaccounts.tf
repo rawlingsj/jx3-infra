@@ -40,6 +40,7 @@ resource "google_service_account" "testgc_sa" {
   provider     = google
   account_id   = "${var.cluster_name}-testgc"
   display_name = substr("JX test GC service account for cluster ${var.cluster_name}", 0, 100)
+  project = "jx-labs-infra"
 }
 
 resource "google_project_iam_member" "testgc_sa_owner_binding" {
