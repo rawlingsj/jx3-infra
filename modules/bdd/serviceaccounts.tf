@@ -81,5 +81,5 @@ resource "google_service_account_iam_member" "testgc_sa_workload_identity_user" 
   provider           = google
   service_account_id = google_service_account.testgc_sa.name
   role               = "roles/iam.workloadIdentityUser"
-  member             = "serviceAccount:${var.gcp_project}.svc.id.goog[jx/jx-test-gc-jx-cli]"
+  member             = "serviceAccount:jenkins-x-labs-bdd.svc.id.goog[jx/jx-test-gc-jx-cli]"
 }
