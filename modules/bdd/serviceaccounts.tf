@@ -45,35 +45,35 @@ resource "google_service_account" "testgc_sa" {
 resource "google_project_iam_member" "testgc_sa_owner_binding" {
   provider = google
   role     = "roles/owner"
-  member   = "serviceAccount:${var.testgc_sa_email}"
+  member   = "serviceAccount:${google_service_account.testgc_sa.email}"
   project = "jenkins-x-labs-bdd"
 }
 
 resource "google_project_iam_member" "testgc_sa_iam_sec_admin_binding" {
   provider = google
   role     = "roles/iam.securityAdmin"
-  member   = "serviceAccount:${var.testgc_sa_email}"
+  member   = "serviceAccount:${google_service_account.testgc_sa.email}"
   project = "jenkins-x-labs-bdd"
 }
 
 resource "google_project_iam_member" "testgc_sa_iam_prj_admin_binding" {
   provider = google
   role     = "roles/resourcemanager.projectIamAdmin"
-  member   = "serviceAccount:${var.testgc_sa_email}"
+  member   = "serviceAccount:${google_service_account.testgc_sa.email}"
   project = "jenkins-x-labs-bdd"
 }
 
 resource "google_project_iam_member" "testgc_sa_access_policy_admin_binding" {
   provider = google
   role     = "roles/accesscontextmanager.policyAdmin"
-  member   = "serviceAccount:${var.testgc_sa_email}"
+  member   = "serviceAccount:${google_service_account.testgc_sa.email}"
   project = "jenkins-x-labs-bdd"
 }
 
 resource "google_project_iam_member" "testgc_sa_kube_engine_developer_binding" {
   provider = google
   role     = "roles/container.developer"
-  member   = "serviceAccount:${var.testgc_sa_email}"
+  member   = "serviceAccount:${google_service_account.testgc_sa.email}"
   project = "jenkins-x-labs-bdd"
 }
 
