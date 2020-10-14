@@ -3,3 +3,4 @@ gsm               = true
 resource_labels   = { "provider" : "jx" }
 node_disk_type    = "pd-ssd"
 node_machine_type = "n1-standard-8"
+cluster_name      = "tf-jx-gentle-titmouse"
