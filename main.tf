@@ -14,6 +14,9 @@ module "jx" {
   parent_domain           = var.parent_domain
   tls_email               = var.tls_email
   lets_encrypt_production = var.lets_encrypt_production
+  jx_git_url              = var.jx_git_url
+  jx_bot_username         = var.jx_bot_username
+  jx_bot_token            = var.jx_bot_token
 }
 
 module "jenkinsxio" {
