@@ -1,5 +1,18 @@
+## Enable to work with local and remote states
+## run terraform init after uncommenting below
+# terraform {
+#   backend "remote" {
+#     hostname = "app.terraform.io"
+#     organization = "jenkinsxio"
+
+#     workspaces {
+#       name = "jx3-infra"
+#     }
+#   }
+# }
+
 module "jx" {
-  source                  = "github.com/rawlingsj/terraform-google-jx?ref=wip2"
+  source                  = "github.com/jenkins-x/terraform-google-jx?ref=master"
   gcp_project             = var.gcp_project
   jx2                     = false
   gsm                     = var.gsm
