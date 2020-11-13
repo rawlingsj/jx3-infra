@@ -18,3 +18,11 @@ resource "google_project_iam_member" "tekton_sa_cloud_builder_binding" {
   member   = "serviceAccount:${var.tekton_sa_email}"
   project = "jenkinsxio"
 }
+
+resource "google_project_iam_member" "tekton_sa_cloud_builder_viewlogs_binding" {
+  provider = google
+  role     = "roles/viewer"
+  member   = "serviceAccount:${var.tekton_sa_email}"
+  project = "jenkinsxio"
+}
+
