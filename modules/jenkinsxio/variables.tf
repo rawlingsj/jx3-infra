@@ -2,6 +2,13 @@
 // Required Variables
 // ----------------------------------------------------------------------------
 variable "tekton_sa_email" {
-  description = "The name of the GCP project to use"
+  type        = string
+}
+
+variable "tekton_sa_name" {
+  type        = string
+}
+
+variable "gcp_project" {
   type        = string
 }
