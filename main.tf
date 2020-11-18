@@ -32,6 +32,14 @@ module "jx" {
   jx_bot_token            = var.jx_bot_token
 }
 
+module "grafana" {
+  source = "./modules/grafana"
+  cluster_name = module.jx.cluster_name
+  depends_on = [
+    module.jx
+  ]
+}
+
 module "jenkinsxio" {
   source = "./modules/jenkinsxio"
   tekton_sa_email = module.jx.tekton_sa_email
