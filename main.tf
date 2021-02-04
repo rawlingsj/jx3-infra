@@ -12,7 +12,7 @@
 # }
 
 module "jx" {
-  source                  = "github.com/rawlingsj/terraform-google-jx?ref=master"
+  source                  = "github.com/jenkins-x/terraform-google-jx?ref=master"
   gcp_project             = var.gcp_project
   jx2                     = false
   gsm                     = var.gsm
