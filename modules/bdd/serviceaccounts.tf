@@ -9,6 +9,7 @@ resource "google_project_iam_member" "tekton_sa_owner_binding" {
 resource "google_iam_workload_identity_pool" "jenkins-x-labs-bdd1" {
   provider                  = google-beta
   workload_identity_pool_id = "jenkins-x-labs-bdd1-pool"
+  project = "jenkins-x-labs-bdd1"
 }
 
 resource "google_project_iam_member" "tekton_sa_iam_sec_admin_binding" {
